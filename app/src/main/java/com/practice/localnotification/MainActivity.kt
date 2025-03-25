@@ -89,12 +89,24 @@ class MainActivity : ComponentActivity() {
                          Text(text = "Big Text Notifications")
                      }
 
+                     Spacer(Modifier.height(12.dp))
+
                      Button(
                          onClick = {
                              bigPictureStyle(this@MainActivity)
                          }
                      ) {
                          Text(text = "Big Picture Notifications")
+                     }
+
+                     Spacer(Modifier.height(12.dp))
+
+                     Button(
+                         onClick = {
+                             inboxStyle(this@MainActivity)
+                         }
+                     ) {
+                         Text(text = "Inbox Notifications")
                      }
                  }
 

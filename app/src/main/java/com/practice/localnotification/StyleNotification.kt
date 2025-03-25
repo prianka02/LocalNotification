@@ -70,3 +70,35 @@ fun bigPictureStyle(context: Context){
         NotificationManagerCompat.from(context).notify(9, notification)
     }
 }
+
+fun inboxStyle(context: Context){
+
+    val style = NotificationCompat.InboxStyle()
+        .setSummaryText("summary")
+        .setBigContentTitle("Big Title")
+        .addLine("First line")
+        .addLine("Second line")
+
+    val notification = NotificationCompat.Builder(context, DEFAULT)
+        .setSmallIcon(R.drawable.ic_launcher_background)
+        .setContentTitle("title")
+        .setContentText("desc")
+        .setStyle(style)
+        .build()
+
+
+    //    Now send this notification to our channel
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        if (ContextCompat.checkSelfPermission(context, POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+            // Permission granted, send notification
+            NotificationManagerCompat.from(context).notify(9, notification)
+        } else {
+            // Permission not granted, you should request permission here (e.g., via an Activity or Fragment)
+            // Optionally, notify the user that permission is required
+            println("Permission for notifications not granted!")
+        }
+    } else {
+        // On older versions, no need for permission check, send notification directly
+        NotificationManagerCompat.from(context).notify(9, notification)
+    }
+}
