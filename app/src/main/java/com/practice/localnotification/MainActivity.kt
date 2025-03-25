@@ -89,6 +89,13 @@ class MainActivity : ComponentActivity() {
                          Text(text = "Big Text Notifications")
                      }
 
+                     Button(
+                         onClick = {
+                             bigPictureStyle(this@MainActivity)
+                         }
+                     ) {
+                         Text(text = "Big Picture Notifications")
+                     }
                  }
 
             }
