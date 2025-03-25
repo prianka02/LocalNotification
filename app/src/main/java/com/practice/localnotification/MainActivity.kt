@@ -79,6 +79,16 @@ class MainActivity : ComponentActivity() {
                          Text(text = "Action Notifications")
                      }
 
+                     Spacer(Modifier.height(12.dp))
+
+                     Button(
+                         onClick = {
+                             bigTextStyle(this@MainActivity)
+                         }
+                     ) {
+                         Text(text = "Big Text Notifications")
+                     }
+
                  }
 
             }
