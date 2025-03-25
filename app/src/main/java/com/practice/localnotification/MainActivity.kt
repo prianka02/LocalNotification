@@ -58,7 +58,19 @@ class MainActivity : ComponentActivity() {
                      ) {
                          Text(text = "Urgent Notifications")
                      }
+
+                     Spacer(Modifier.height(12.dp))
+
+                     Button(
+                         onClick = {
+                             groupNotification(this@MainActivity)
+                         }
+                     ) {
+                         Text(text = "Group Notifications")
+                     }
+
                  }
+
             }
         }
     }
