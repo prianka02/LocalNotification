@@ -118,6 +118,17 @@ class MainActivity : ComponentActivity() {
                      ) {
                          Text(text = "Message Notifications")
                      }
+
+                     Spacer(Modifier.height(12.dp))
+
+                     Button(
+                         onClick = {
+                             media(this@MainActivity)
+                         }
+                     ) {
+                         Text(text = "Media Notifications")
+                     }
+
                  }
 
             }
